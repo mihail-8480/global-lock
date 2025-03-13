@@ -1,0 +1,33 @@
+{
+  "name": "@mojsoski/global-lock",
+  "version": "1.0.0",
+  "description": "A global lock library for Node.js",
+  "main": "dist/lib/index.js",
+  "types": "dist/lib/index.d.ts",
+  "bin": {
+    "global-lock": "dist/src/server.js"
+  },
+  "keywords": [
+    "lock",
+    "mutex",
+    "tcp"
+  ],
+  "author": "Mihail Mojsoski",
+  "license": "MIT",
+  "type": "commonjs",
+  "devDependencies": {
+    "@types/node": "^22.13.10",
+    "typescript": "^5.7.3"
+  },
+  "scripts": {
+    "watch": "npx tsc --watch",
+    "build": "npx tsc",
+    "prepare": "npm run build",
+    "version": "git add -A lib",
+    "postversion": "git push && git push --tags",
+    "start": "node dist/src/server.js"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
